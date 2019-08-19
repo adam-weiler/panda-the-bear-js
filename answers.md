@@ -114,7 +114,7 @@ for (let x = 0; x < 10; x++) {
 
 
 # Question 3:
-let bioInfo = document.querySelector('.bio-info');
+<!-- let bioInfo = document.querySelector('.bio-info');
 
 let bioInfoItem = document.querySelectorAll('.bio-info-item')[0];
 
@@ -122,6 +122,23 @@ let bioItemClone = bioInfoItem.cloneNode(true);
 bioItemClone.querySelector('.bio-info-title').innerText = 'Page last updated on'
 bioItemClone.querySelector('.bio-info-name').innerText = 'Page last updated on'
 
+bioInfo.appendChild(bioItemClone); -->
 
-bioInfo.appendChild(bioItemClone);
+let bioInfo = document.querySelector('.bio-info');
 
+const listItem = document.createElement('li');
+listItem.className = 'bio-info-item';
+
+const leftSpan = document.createElement('span');
+let lastUpdated = document.createTextNode('Page last updated on');
+leftSpan.className = 'bio-info-title';
+leftSpan.appendChild(lastUpdated);
+listItem.appendChild(leftSpan);
+
+const rightSpan = document.createElement('span');
+let currentDate = document.createTextNode(new Date());
+rightSpan.className = 'bio-info-value bio-info-phone';
+rightSpan.appendChild(currentDate);
+listItem.appendChild(rightSpan);
+
+bioInfo.appendChild(listItem);
