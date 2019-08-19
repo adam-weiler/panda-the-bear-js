@@ -1,3 +1,5 @@
+# Part 1:
+
 # Question 1A:
 let profileImg = document.querySelector('.profile-image');
 profileImg.src = 'https://static.turbosquid.com/Preview/000309/875/UJ/3d-panda-bamboo-bear_D.jpg';
@@ -80,3 +82,46 @@ let personalInfo = document.querySelectorAll('.bio-info-value');
 for (let x = 0; x < personalInfo.length; x++) {
     personalInfo[x].innerText = '';
 }
+
+
+
+# Part 2:
+
+# Question 1A:
+let timeTravelBar = document.querySelector('#time-travel');
+timeTravelBar.parentNode.remove();
+
+
+# Question 1B:
+let pikachuImg = document.querySelector('#right-image').querySelector('img');
+
+let pikaClone = pikachuImg.cloneNode(true);
+
+let portfolioContainer = document.querySelector('.portfolio-container');
+
+portfolioContainer.appendChild(pikaClone);
+
+
+# Question 2:
+let pikachuImg = document.querySelector('#right-image').querySelector('img');
+
+let portfolioContainer = document.querySelector('.portfolio-container');
+
+for (let x = 0; x < 10; x++) {
+    let pikaClone = pikachuImg.cloneNode(true);
+    portfolioContainer.appendChild(pikaClone);
+}
+
+
+# Question 3:
+let bioInfo = document.querySelector('.bio-info');
+
+let bioInfoItem = document.querySelectorAll('.bio-info-item')[0];
+
+let bioItemClone = bioInfoItem.cloneNode(true);
+bioItemClone.querySelector('.bio-info-title').innerText = 'Page last updated on'
+bioItemClone.querySelector('.bio-info-name').innerText = 'Page last updated on'
+
+
+bioInfo.appendChild(bioItemClone);
+
